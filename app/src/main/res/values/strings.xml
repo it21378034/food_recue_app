@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">doFood2</string>
+    <string name="Home">Home</string>
+    <string name="add_Member">Add Member</string>
+    <string name="donate_pending">Donate Pending</string>
+    <string name="setting">Setting</string>
+    <string name="update_fee">Update Fee</string>
+    <string name="change_password_mobile">Change Password/Mobile</string>
+    <string name="log_out">Log Out</string>
+    <string name="location">Location</string>
+
+    <string name="navigation_drawer_open">Open</string>
+    <string name="navigation_drawer_close">Close</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="_0_00">0.00</string>
+    <string name="save">Save</string>
+    <string name="doFood_membership_price">doFood Membership Price</string>
+    <string name="_1_month_fee">1 Month Fee</string>
+    <string name="_3_month_fee">3 Months Fee</string>
+    <string name="_6_month_fee">6 Months Fee</string>
+    <string name="_1_year">1 Year Fee</string>
+    <string name="_2_year">2 Years Fee</string>
+    <string name="_3_year">3 Years Fee</string>
+
+    <string-array name="membership">
+        <item>Select</item>
+        <item>1 Month</item>
+        <item>3 Month</item>
+        <item>6 Month</item>
+        <item>1 Year</item>
+        <item>3 Years</item>
+
+    </string-array>
+</resources>
