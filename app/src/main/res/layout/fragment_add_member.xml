@@ -176,6 +176,7 @@
                         android:hint="  Date of Joining"
                         android:layout_weight="1"
                         android:textSize="15sp"
+                        android:id="@+id/edtJoining"
                         android:textColor="@color/black"
                         android:enabled="false"
                         tools:ignore="Autofill,HardCodedText,TextFields"/>

@@ -12,6 +12,7 @@ import com.example.dofood2.global.DB
 import com.example.dofood2.global.Myfunction
 
 
+
 class FragmentAddUpdateFee : Fragment() {
 
     private lateinit var binding: FragmentAddUpdateFeeBinding
@@ -61,7 +62,7 @@ class FragmentAddUpdateFee : Fragment() {
     private fun saveData(){
         try {
             val sqlQuery = "INSERT OR REPLACE INTO FEE(ID,ONE_MONTH,THREE_MONTH,SIX_MONTH,ONE_YEAR,THREE_YEAR)VALUES"+
-                    "('1','"+binding.edtOneMonth.text.toString().trim()+"','"+binding.edtThreeMonth.text.toString().trim()+"'" +
+                    "('1','"+binding.edtOneMonth.text.toString().trim()+"','"+binding.edtThreeMonth.text.toString().trim()+"'," +
                     "'"+binding.edtSixMonth.text.toString().trim()+"','"+binding.edtOneYear.text.toString().trim()+"'," +
                     "'"+binding.edtThreeYear.text.toString().trim()+"')"
 
