@@ -23,7 +23,7 @@ class Detailsadd : AppCompatActivity() {
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_detailsadd)
 
         etName = findViewById(R.id.name)
         etID = findViewById(R.id.idc)
@@ -49,7 +49,7 @@ class Detailsadd : AppCompatActivity() {
             )
 
 
-            db.collection("kavindu").document(userId).set(userMap)
+            db.collection("kavidu").document(userId).set(userMap)
                 .addOnSuccessListener{
                     Toast.makeText(this,"Successfully Added!",Toast.LENGTH_SHORT).show()
                     etName.text.clear()
