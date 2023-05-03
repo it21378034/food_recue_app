@@ -54,7 +54,7 @@
                         android:orientation="vertical">
 
                         <TextView
-                            android:id="@+id/first_name"
+                            android:id="@+id/f_name"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="First Name"
@@ -62,7 +62,7 @@
                             android:textSize="18sp" />
 
                         <EditText
-                            android:id="@+id/f_name"
+                            android:id="@+id/first_name"
                             android:layout_width="match_parent"
                             android:layout_height="50dp"
                             android:layout_marginTop="1dp"
@@ -100,7 +100,7 @@
                             android:textSize="18sp" />
 
                         <EditText
-                            android:id="@+id/Last_name"
+                            android:id="@+id/last_name"
                             android:layout_width="match_parent"
                             android:layout_height="50dp"
                             android:layout_marginTop="1dp"
@@ -133,7 +133,7 @@
                     android:textSize="18sp" />
 
                 <EditText
-                    android:id="@+id/Email"
+                    android:id="@+id/mail"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_marginTop="1dp"
@@ -164,7 +164,7 @@
                     tools:ignore="DuplicateIds" />
 
                 <EditText
-                    android:id="@+id/editTextTextPersonName"
+                    android:id="@+id/phone_number"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_marginTop="2dp"
@@ -196,7 +196,7 @@
                     tools:ignore="DuplicateIds" />
 
                 <EditText
-                    android:id="@+id/editTextTextPersonName"
+                    android:id="@+id/address"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_marginTop="1dp"
@@ -211,7 +211,7 @@
             </LinearLayout>
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/button4"
+                android:id="@+id/next"
                 style="@android:style/Widget.Button"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
@@ -219,12 +219,10 @@
                 android:layout_marginTop="20dp"
                 android:background="@drawable/button_background"
                 android:gravity="center"
-                android:text="Login"
+                android:text="Next"
                 android:textColor="#ffffff"
                 android:textSize="18sp"
                 android:textStyle="bold" />
-
-
         </LinearLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
