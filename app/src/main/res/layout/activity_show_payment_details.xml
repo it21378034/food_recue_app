@@ -27,7 +27,7 @@
                 android:id="@+id/textView2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Show payment Details"
+                android:text="Show Payment Details"
                 android:textAlignment="center"
                 android:textColor="#6C5DD2"
                 android:textSize="40sp"
@@ -68,6 +68,8 @@
                             android:background="@drawable/backgrount_edit"
                             android:ems="10"
                             android:gravity="center"
+                            android:hint="Enter Your Name"
+                            android:inputType="textPersonName"
                             android:textColor="#707070"
                             android:textColorHint="#707070"
                             android:textSize="16sp" />
@@ -96,7 +98,7 @@
                             android:textColor="#6C5002"
                             android:textSize="18sp" />
 
-                        <EditText
+                        <TextView
                             android:id="@+id/last_name"
                             android:layout_width="match_parent"
                             android:layout_height="50dp"
@@ -104,6 +106,8 @@
                             android:background="@drawable/backgrount_edit"
                             android:ems="10"
                             android:gravity="center"
+                            android:hint="Enter Your Name"
+                            android:inputType="textPersonName"
                             android:textColor="#707070"
                             android:textColorHint="#707070"
                             android:textSize="16sp" />
@@ -127,7 +131,7 @@
                     android:textColor="#6C5002"
                     android:textSize="18sp" />
 
-                <EditText
+                <TextView
                     android:id="@+id/mail"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
@@ -135,6 +139,8 @@
                     android:background="@drawable/backgrount_edit"
                     android:ems="10"
                     android:gravity="center"
+                    android:hint="Enter Your Email Address"
+                    android:inputType="textPersonName"
                     android:textColor="#707070"
                     android:textColorHint="#707070" />
             </LinearLayout>
@@ -164,6 +170,8 @@
                     android:background="@drawable/backgrount_edit"
                     android:ems="10"
                     android:gravity="center"
+                    android:hint="Enter Your Phone number"
+                    android:inputType="textPersonName"
                     android:textColor="#707070"
                     android:textColorHint="#707070"
                     tools:ignore="DuplicateIds" />
@@ -186,14 +194,16 @@
                     android:textSize="18sp"
                     tools:ignore="DuplicateIds" />
 
-                <EditText
-                    android:id="@+id/addres"
+                <TextView
+                    android:id="@+id/address"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_marginTop="1dp"
                     android:background="@drawable/backgrount_edit"
                     android:ems="10"
                     android:gravity="center"
+                    android:hint="Enter Your Address"
+                    android:inputType="textPersonName"
                     android:textColor="#707070"
                     android:textColorHint="#707070"
                     tools:ignore="DuplicateIds" />
@@ -214,5 +224,4 @@
                 android:textStyle="bold" />
         </LinearLayout>
     </ScrollView>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -13,11 +13,11 @@ import java.util.*
 
 class show_payment_Details : AppCompatActivity() {
 
-    private lateinit var first_name: TextView
-    private lateinit var last_name: TextView
+    private lateinit var First_name: TextView
+    private lateinit var Last_name: TextView
     private lateinit var mail: TextView
     private lateinit var phone_number: TextView
-    private lateinit var addres: TextView
+    private lateinit var address: TextView
 
 
     private var db = Firebase.firestore
@@ -28,28 +28,28 @@ class show_payment_Details : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_show_payment_details)
 
-        first_name = findViewById(R.id.first_name)
-        last_name = findViewById(R.id.last_name)
+        First_name = findViewById(R.id.first_name)
+        Last_name = findViewById(R.id.last_name)
         mail = findViewById(R.id.mail)
         phone_number = findViewById(R.id.phone_number)
-        addres = findViewById(R.id.addres)
+        address = findViewById(R.id.address)
 
         val userId = UUID.randomUUID().toString()
         val ref = db.collection("payment Details").document(userId)
         ref.get().addOnSuccessListener {
             if (it != null){
-                val first_name1 = it.data?.get("first_name")?.toString()
-                val last_name1 = it.data?.get("last_name")?.toString()
+                val first_name = it.data?.get("first_name")?.toString()
+                val last_name = it.data?.get("last_name")?.toString()
                 val mail1 = it.data?.get("mail")?.toString()
                 val phone_number1 = it.data?.get("phone_number")?.toString()
-                val addres1 = it.data?.get("addres")?.toString()
+                val addres = it.data?.get("address")?.toString()
 
 
-                first_name.text = first_name1
-                last_name.text = last_name1
+                First_name.text = first_name
+                Last_name.text = last_name
                 mail.text = mail1
                 phone_number.text = phone_number1
-                addres.text = addres1
+                address.text = addres
 
         }
 

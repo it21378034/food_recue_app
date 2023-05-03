@@ -53,11 +53,11 @@ class payment_details : AppCompatActivity() {
 
             val useMap = hashMapOf(
                 "id" to userId,
-                "First name" to first_name_two,
-                "Last name" to last_name_two,
+                "First_name" to first_name_two,
+                "Last_name" to last_name_two,
                 "mail" to mail_two,
-                "phone number" to phone_number_two,
-                "addres" to address_two
+                "phone_number" to phone_number_two,
+                "address" to address_two
             )
 
             db.collection("payment Details").document(userId).set(useMap)
