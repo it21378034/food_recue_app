@@ -15,13 +15,13 @@ import androidx.appcompat.app.AlertDialog
 
 class payment_details : AppCompatActivity() {
 
-    private lateinit var first_name:EditText
-    private lateinit var last_name:EditText
-    private lateinit var mail:EditText
-    private lateinit var phone_number:EditText
+    private lateinit var first_name: EditText
+    private lateinit var last_name: EditText
+    private lateinit var mail: EditText
+    private lateinit var phone_number: EditText
     private lateinit var address: EditText
-    private lateinit var next:Button
-    private lateinit var builer:AlertDialog.Builder
+    private lateinit var next: Button
+    private lateinit var builer: AlertDialog.Builder
 
     private var db = FirebaseFirestore.getInstance();
 
@@ -41,26 +41,13 @@ class payment_details : AppCompatActivity() {
         builer = AlertDialog.Builder(this)
 
         next.setOnClickListener {
-            builer.setTitle("Alert")
-                .setMessage("Add your Data?")
-                .setCancelable(true)
-
-                .setPositiveButton("yes"){dialogInterface,it ->
-                    finish()
-                }
-                .setNegativeButton("no"){dialogInterface,it ->
-                    Toast.makeText(this@payment_details,"yes Clicked",Toast.LENGTH_SHORT).show()
-                }
-                .show()
-
-            }
 
             val userId = UUID.randomUUID().toString()
 
             val first_name_two = first_name.text.toString().trim()
             val last_name_two = last_name.text.toString().trim()
             val mail_two = mail.text.toString().trim()
-            val phone_number_two = mail.text.toString().trim()
+            val phone_number_two = phone_number.text.toString().trim()
             var address_two = address.text.toString().trim()
 
 
@@ -75,7 +62,7 @@ class payment_details : AppCompatActivity() {
 
             db.collection("payment Details").document(userId).set(useMap)
                 .addOnSuccessListener {
-                    Toast.makeText(this,"Successfully Added",Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Successfully Added", Toast.LENGTH_SHORT).show()
                     first_name.text.clear()
                     last_name.text.clear()
                     mail.text.clear()
@@ -85,9 +72,27 @@ class payment_details : AppCompatActivity() {
                 }
                 .addOnFailureListener {
                     Toast.makeText(this, "Failed", Toast.LENGTH_SHORT).show()
+
                 }
 
-        }
+            builer.setTitle("Alert")
+                .setMessage("Add your Data?")
+                .setCancelable(true)
+
+                .setPositiveButton("yes"){dialogInterface,it ->
+                    // Navigate to MainActivity
+                    val intent = Intent(this@payment_details, MainActivity::class.java)
+                    startActivity(intent)
+                }
+                .setNegativeButton("no"){dialogInterface,it ->
+                    Toast.makeText(this@payment_details,"yes Clicked",Toast.LENGTH_SHORT).show()
+                }
+                .show()
+
+            }
+
+    }
 
 
     }
+
