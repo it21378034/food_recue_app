@@ -317,5 +317,4 @@ class FragmentAddMember : Fragment() {
             .load(R.drawable.boy)
             .into(binding.imgPic)
     }
-    //////
 }
