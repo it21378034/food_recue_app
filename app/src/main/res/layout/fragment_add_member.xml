@@ -93,6 +93,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
                         android:layout_gravity="center"
+                        android:id="@+id/radioGroup"
                         android:orientation="horizontal">
 
                         <RadioButton
@@ -156,7 +157,6 @@
                     android:layout_height="wrap_content"
                     android:hint="Address"
                     android:layout_margin="10dp"
-                    android:maxLength="10"
                     android:textColor="@color/black"
                     android:textSize="15sp"
                     android:id="@+id/editAddress"

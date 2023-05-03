@@ -1,7 +1,10 @@
 package com.example.dofood2.global
 
+import android.annotation.SuppressLint
 import android.database.Cursor
 import android.util.Log
+import java.text.SimpleDateFormat
+import java.util.*
 
 class Myfunction {
 
@@ -20,6 +23,20 @@ class Myfunction {
             }
             return value
         }
-    }
 
+        @SuppressLint("SimpleDateFormat")
+        fun returnSQLDateFormat(date:String): String{
+            try {
+                if(date.trim().isNotEmpty()){
+                    val dateFormat1 = SimpleDateFormat("yyyy-MM-dd")
+                    val firstDate = dateFormat1.parse(date)
+                    val dateFormat2 = SimpleDateFormat("dd/MM/yyyy")
+                    return dateFormat2.format(firstDate as Date)
+                }
+            }catch (e:Exception){
+                e.printStackTrace()
+            }
+            return ""
+        }
+    }
 }

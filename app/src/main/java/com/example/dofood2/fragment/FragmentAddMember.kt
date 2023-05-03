@@ -1,12 +1,11 @@
 package com.example.dofood2.fragment
 
-import android.annotation.SuppressLint
+//import com.example.dofood2.Manifest
 import android.app.DatePickerDialog
-import android.content.DialogInterface
+import android.database.DatabaseUtils
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,14 +13,12 @@ import android.widget.AdapterView
 import android.widget.EditText
 import android.widget.Spinner
 import android.widget.Toast
-import  com.example.dofood2.Manifest
+import androidx.fragment.app.Fragment
+import com.bumptech.glide.Glide
 import com.example.dofood2.R
 import com.example.dofood2.databinding.FragmentAddMemberBinding
-import com.example.dofood2.databinding.FragmentAllMemberBinding
-import com.example.dofood2.databinding.FragmentAllMemberBinding.*
 import com.example.dofood2.global.DB
 import com.example.dofood2.global.Myfunction
-import com.github.florent37.runtimepermission.RuntimePermission
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -36,7 +33,9 @@ class FragmentAddMember : Fragment() {
     var sixMonths:String? =""
     var oneYear:String? =""
     var threeYear:String? =""
+    private var actualImagePath = ""
     private lateinit var binding:FragmentAddMemberBinding
+    private var gender = "Male"
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = FragmentAddMemberBinding.inflate(inflater, container,false)
         return binding.root
@@ -110,15 +109,29 @@ class FragmentAddMember : Fragment() {
             }
         })
 
+        binding.radioGroup.setOnCheckedChangeListener { radioGroup, i ->
+            when(id){
+                R.id.rdMale ->{
+                    gender = "Male"
+                }
+                R.id.rdFeMale ->{
+                    gender = "Female"
+                }
+            }
+        }
+
+        binding.btnAddMemberSave.setOnClickListener {
+            if(validate()){
+                saveData()
+            }
+
+        }
+
         binding.imgPicDate.setOnClickListener {
             activity?.let { it1 -> DatePickerDialog(it1,dateSetListener,
             cal.get(Calendar.YEAR),
             cal.get(Calendar.MONTH),
             cal.get(Calendar.DAY_OF_MONTH)).show() }
-        }
-
-        binding.imgTakeImage.setOnClickListener {
-            getImage()
         }
 
         getFee()
@@ -128,12 +141,14 @@ class FragmentAddMember : Fragment() {
         try {
             val sqlQuery = "SELECT * FROM FEE WHERE ID = '1'"
             db?.fireQuery(sqlQuery)?.use {
-                oneMonth = Myfunction.getValue(it,"ONE_MONTH")
-                threeMonths = Myfunction.getValue(it,"THREE_MONTH")
-                sixMonths = Myfunction.getValue(it,"SIX_MONTH")
-                oneMonth = Myfunction.getValue(it,"ONE_MONTH")
-                oneYear = Myfunction.getValue(it,"ONE_YEAR")
-                threeYear = Myfunction.getValue(it,"THREE_YEAR")
+                if(it.count>0) {
+                    oneMonth = Myfunction.getValue(it, "ONE_MONTH")
+                    threeMonths = Myfunction.getValue(it, "THREE_MONTH")
+                    sixMonths = Myfunction.getValue(it, "SIX_MONTH")
+                    oneMonth = Myfunction.getValue(it, "ONE_MONTH")
+                    oneYear = Myfunction.getValue(it, "ONE_YEAR")
+                    threeYear = Myfunction.getValue(it, "THREE_YEAR")
+                }
             }
         }catch (e:Exception){
             e.printStackTrace()
@@ -233,62 +248,73 @@ class FragmentAddMember : Fragment() {
         Toast.makeText(activity, value, Toast.LENGTH_LONG).show()
     }
 
-    private  fun getImage(){
-        val items:Array<CharSequence>
+    private fun validate():Boolean{
+        if(binding.editFirstName.text.toString().trim().isEmpty()){
+            showToast("Enter First Name ")
+            return false
+        }else if(binding.editLastName.text.toString().trim().isEmpty()){
+            showToast("Enter Last Name ")
+            return false
+        }else if(binding.editAge.text.toString().trim().isEmpty()){
+            showToast("Enter Age  ")
+            return false
+        }else if(binding.editMobile.text.toString().trim().isEmpty()){
+            showToast("Enter Mobile Number ")
+            return false
+        }
+
+        return true
+    }
+
+    private fun saveData(){
         try {
+            val sqlQuery = "INSERT OR REPLACE INTO MEMBER(ID,FIRST_NAME,LAST_NAME,GENDER,AGE," +
+                    "WEIGHT,MOBILE,ADDRESS,DATE_OF_JOINING,MEMBERSHIP,EXPIRE_ON,DISCOUNT,TOTAL,IMAGE_PATH,STATUS)VALUES"+
+                    "('"+getIncrementId()+"',"+DatabaseUtils.sqlEscapeString(binding.editFirstName.text.toString().trim())+"," +
+                    ""+DatabaseUtils.sqlEscapeString(binding.editLastName.text.toString().trim())+",'"+gender+"'," +
+                    "'"+binding.editAge.text.toString().trim()+"','"+binding.editweight.text.toString().trim()+"',"+
+                    ""+binding.editMobile.text.toString().trim()+","+DatabaseUtils.sqlEscapeString(binding.editAddress.text.toString().trim())+"," +
+                    "'"+Myfunction.returnSQLDateFormat(binding.edtJoining.text.toString().trim())+"','"+binding.spMembership.selectedItem.toString().trim()+"'," +
+                    "'"+Myfunction.returnSQLDateFormat(binding.editExpire.text.toString().trim())+"','"+binding.edtDiscount.text.toString().trim() +"'," +
+                    "'"+binding.edtAmount.text.toString().trim()+"','"+ actualImagePath+"','A')"
 
-            items = arrayOf("Take Photo","Choose Image", "Cancel")
-            val builder = android.app.AlertDialog.Builder(activity)
-            builder.setCancelable(false)
-            builder.setTitle("Select Image")
-            builder.setItems(items) { dialogInterface, i ->
+            db?.executeQuery(sqlQuery)
+            showToast("Data saved successfully")
 
-                if(items[i]=="Take Photo"){
-                   RuntimePermission.askPermission(this)
-                       .request(android.Manifest.permission.CAMERA)
-                       .onAccepted{
-
-                       }
-                       .onDenied{
-                           android.app.AlertDialog.Builder(activity)
-                               .setMessage("Please accept our permission to capture image")
-                               .setPositiveButton("Yes") { dialogInterface, i ->
-                                    it.askAgain()
-                               }
-                               .setNegativeButton("No"){ dialogInterface, i ->
-                                     dialogInterface.dismiss()
-                               }
-                               .show()
-                       }
-                       .ask()
-
-
-                }else if (items[i]=="Choose Image"){
-                    RuntimePermission.askPermission(this)
-                        .request(android.Manifest.permission.WRITE_EXTERNAL_STORAGE)
-                        .onAccepted{
-
-                        }
-                        .onDenied{
-                            android.app.AlertDialog.Builder(activity)
-                                .setMessage("Please accept our permission to capture image")
-                                .setPositiveButton("Yes") { dialogInterface, i ->
-                                    it.askAgain()
-                                }
-                                .setNegativeButton("No"){ dialogInterface, i ->
-                                    dialogInterface.dismiss()
-                                }
-                                .show()
-                        }
-                        .ask()
-                }else{
-                    dialogInterface.dismiss()
-                }
-            }
-            builder.show()
+            clearData()
 
         }catch (e:Exception){
             e.printStackTrace()
         }
+    }
+
+    private  fun getIncrementId():String{
+        var incrementId=""
+        try {
+
+            val sqlQuery = "SELECT IFNULL(MAX(ID)+1,'1') AS ID FROM MEMBER"
+            db?.fireQuery(sqlQuery)?.use {
+                if(it.count>0) {
+                    incrementId = Myfunction.getValue(it, "ID")
+                }
+            }
+        }catch (e:Exception){
+            e.printStackTrace()
+        }
+        return  incrementId
+    }
+
+    private  fun clearData(){
+        binding.editFirstName.setText("")
+        binding.editLastName.setText("")
+        binding.editAge.setText("")
+        binding.editweight.setText("")
+        binding.editMobile.setText("")
+        binding.edtJoining.setText("")
+        actualImagePath=""
+
+        Glide.with(this)
+            .load(R.drawable.boy)
+            .into(binding.imgPic)
     }
 }
