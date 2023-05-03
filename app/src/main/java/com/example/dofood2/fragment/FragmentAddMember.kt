@@ -274,8 +274,8 @@ class FragmentAddMember : Fragment() {
                     ""+DatabaseUtils.sqlEscapeString(binding.editLastName.text.toString().trim())+",'"+gender+"'," +
                     "'"+binding.editAge.text.toString().trim()+"','"+binding.editweight.text.toString().trim()+"',"+
                     ""+binding.editMobile.text.toString().trim()+","+DatabaseUtils.sqlEscapeString(binding.editAddress.text.toString().trim())+"," +
-                    "'"+Myfunction.returnSQLDateFormat(binding.edtJoining.text.toString().trim())+"','"+binding.spMembership.selectedItem.toString().trim()+"'," +
-                    "'"+Myfunction.returnSQLDateFormat(binding.editExpire.text.toString().trim())+"','"+binding.edtDiscount.text.toString().trim() +"'," +
+                    "'"+Myfunction.returnUserSQLDateFormat(binding.edtJoining.text.toString().trim())+"','"+binding.spMembership.selectedItem.toString().trim()+"'," +
+                    "'"+Myfunction.returnUserSQLDateFormat(binding.editExpire.text.toString().trim())+"','"+binding.edtDiscount.text.toString().trim() +"'," +
                     "'"+binding.edtAmount.text.toString().trim()+"','"+ actualImagePath+"','A')"
 
             db?.executeQuery(sqlQuery)

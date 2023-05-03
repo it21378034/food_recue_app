@@ -25,7 +25,7 @@ class Myfunction {
         }
 
         @SuppressLint("SimpleDateFormat")
-        fun returnSQLDateFormat(date:String): String{
+        fun returnUserSQLDateFormat(date:String): String{
             try {
                 if(date.trim().isNotEmpty()){
                     val dateFormat1 = SimpleDateFormat("yyyy-MM-dd")

@@ -18,6 +18,7 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 
+
 class FragmentAllMember : BaseFragment() {
     private val TAG = "FragmentAllMember"
     var db: DB? = null
@@ -87,13 +88,13 @@ class FragmentAllMember : BaseFragment() {
                             mobile = Myfunction.getValue(it, "MOBILE"),
                             address = Myfunction.getValue(it, "ADDRESS"),
                             image = Myfunction.getValue(it, "IMAGE_PATH"),
-                            dateOfJoining = Myfunction.returnSQLDateFormat(
+                            dateOfJoining = Myfunction.returnUserSQLDateFormat(
                                 Myfunction.getValue(
                                     it,
                                     "DATE_OF_JOINING"
                                 )
                             ),
-                            expiryDate = Myfunction.returnSQLDateFormat(
+                            expiryDate = Myfunction.returnUserSQLDateFormat(
                                 Myfunction.getValue(
                                     it,
                                     "EXPIRE_ON"
@@ -114,6 +115,7 @@ class FragmentAllMember : BaseFragment() {
                 binding.txtAllMemberNDF.visibility = View.GONE
 
                 adapter = AdapterLoadMember(arrayList)
+
                 binding.recyclerViewMember.layoutManager = LinearLayoutManager(activity)
                 binding.recyclerViewMember.adapter = adapter
             } else {
