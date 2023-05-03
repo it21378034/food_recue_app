@@ -11,6 +11,7 @@ import android.widget.Toast
 import com.google.firebase.firestore.FirebaseFirestore
 import java.net.Inet4Address
 import java.util.*
+import androidx.appcompat.app.AlertDialog
 
 class payment_details : AppCompatActivity() {
 
@@ -20,6 +21,7 @@ class payment_details : AppCompatActivity() {
     private lateinit var phone_number:EditText
     private lateinit var address: EditText
     private lateinit var next:Button
+    private lateinit var builer:AlertDialog.Builder
 
     private var db = FirebaseFirestore.getInstance();
 
@@ -29,7 +31,6 @@ class payment_details : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_payment_details)
 
-
         first_name = findViewById(R.id.first_name)
         last_name = findViewById(R.id.last_name)
         mail = findViewById(R.id.mail)
@@ -37,13 +38,21 @@ class payment_details : AppCompatActivity() {
         address = findViewById(R.id.address)
         next = findViewById(R.id.next)
 
-        next.setOnClickListener {
-            next.visibility = View.VISIBLE
+        builer = AlertDialog.Builder(this)
 
-            val next = findViewById<Button>(R.id.next)
-            next.setOnClickListener {
-                val Intent =Intent(this,MainActivity::class.java)
-                startActivity(Intent)
+        next.setOnClickListener {
+            builer.setTitle("Alert")
+                .setMessage("Add your Data?")
+                .setCancelable(true)
+
+                .setPositiveButton("yes"){dialogInterface,it ->
+                    finish()
+                }
+                .setNegativeButton("no"){dialogInterface,it ->
+                    Toast.makeText(this@payment_details,"yes Clicked",Toast.LENGTH_SHORT).show()
+                }
+                .show()
+
             }
 
             val userId = UUID.randomUUID().toString()
@@ -77,8 +86,8 @@ class payment_details : AppCompatActivity() {
                 .addOnFailureListener {
                     Toast.makeText(this, "Failed", Toast.LENGTH_SHORT).show()
                 }
+
         }
 
 
     }
-}
