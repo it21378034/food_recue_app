@@ -1,4 +1,4 @@
-# food_recue_app -Food Rescue and Donation Mobile Application
+# food_recue_app - Food Rescue and Donation Mobile Application
 
 #Group Members - doFOOD Mobile Application Development Team
 
