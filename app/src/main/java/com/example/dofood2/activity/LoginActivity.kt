@@ -1,12 +1,20 @@
 package com.example.dofood2.activity
 
+import android.annotation.SuppressLint
+import android.app.Dialog
 import android.content.Intent
 import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.dofood2.R
 import com.example.dofood2.databinding.ActivityLoginBinding
+import com.example.dofood2.databinding.ForgetPasswordDialogBinding
 import com.example.dofood2.global.DB
+import com.example.dofood2.global.Myfunction
 import com.example.dofood2.manager.SessionManager
 
 class LoginActivity : AppCompatActivity() {
@@ -33,7 +41,7 @@ class LoginActivity : AppCompatActivity() {
 
         }
         binding.txtForgotPassword.setOnClickListener {
-
+            showDialog()
         }
     }
 
@@ -72,6 +80,41 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun showDialog(){
+        val binding2 = ForgetPasswordDialogBinding.inflate(LayoutInflater.from(this))
+        val dialog = Dialog(this, R.style.AlertDialogCustom)
+        dialog.setContentView(binding2.root)
+        dialog.setCancelable(false)
+        dialog.show()
 
+        binding2.btnForgetSubmit.setOnClickListener {
+            if(binding2.edtForgetMobile.text.toString().trim().isNotEmpty()){
+                checkData(binding2.edtForgetMobile.text.toString().trim(), binding2.txtYourPassword)
+            }else{
+                Toast.makeText(this,"Mobile No.", Toast.LENGTH_LONG).show()
+            }
+        }
+        binding2.imgBackButton.setOnClickListener {
+            dialog.dismiss()
+        }
     }
+
+    @SuppressLint("SetTextI18n")
+    private fun checkData(mobile:String, txtShowPassword:TextView){
+        try {
+            val sqlQuery = "SELECT * FROM ADMIN WHERE MOBILE='$mobile'"
+            db?.fireQuery(sqlQuery)?.use {
+                if(it.count>0){
+                    val password = Myfunction.getValue(it,"PASSWORD")
+                    txtShowPassword.visibility = View.VISIBLE
+                    txtShowPassword.text="Your Password is : $password"
+                }else{
+                    Toast.makeText(this,"Incorrect Mobile Number", Toast.LENGTH_LONG).show()
+                    txtShowPassword.visibility = View.GONE
+                }
+            }
+        }catch (e:Exception){
+            e.printStackTrace()
+        }
+    }
+
 }
