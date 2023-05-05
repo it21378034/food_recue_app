@@ -105,16 +105,12 @@ class FragmentAllMember : BaseFragment() {
                 binding.txtAllMemberNDF.visibility = View.GONE
 
                 adapter = AdapterLoadMember(arrayList)
-
                 binding.recyclerViewMember.layoutManager = LinearLayoutManager(activity)
                 binding.recyclerViewMember.adapter = adapter
 
                 adapter?.onClick {
                     loadFragment(it)
                 }
-
-
-
             } else {
                 binding.recyclerViewMember.visibility = View.GONE
                 binding.txtAllMemberNDF.visibility = View.VISIBLE

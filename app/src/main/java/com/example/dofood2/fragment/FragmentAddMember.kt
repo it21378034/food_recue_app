@@ -1,6 +1,7 @@
 package com.example.dofood2.fragment
 
 //import com.example.dofood2.Manifest
+import android.annotation.SuppressLint
 import android.app.DatePickerDialog
 import android.database.DatabaseUtils
 import android.os.Bundle
@@ -35,19 +36,16 @@ class FragmentAddMember : Fragment() {
     private lateinit var binding: FragmentAddMemberBinding
     private var gender = "Male"
     private var ID = ""
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
+
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = FragmentAddMemberBinding.inflate(inflater, container, false)
         return binding.root
     }
 
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         db = activity?.let { DB(it) }
-
 
         ID = arguments!!.getString("ID").toString()
 
@@ -152,7 +150,6 @@ class FragmentAddMember : Fragment() {
             if (validate()) {
                 saveData()
             }
-
         }
 
         binding.imgPicDate.setOnClickListener {
@@ -167,7 +164,7 @@ class FragmentAddMember : Fragment() {
         }
         getFee()
 
-        if (ID.trim().isNotEmpty()) {
+        if(ID.trim().isNotEmpty()) {
             loadData()
         }
     }
@@ -261,6 +258,7 @@ class FragmentAddMember : Fragment() {
         }
     }
 
+    @SuppressLint("SimpleDateFormat")
     private fun calculateExpireDate(month: Int, edtExpiry: EditText) {
         val dtStart = binding.edtJoining.text.toString().trim()
         if (dtStart.isNotEmpty()) {
@@ -360,7 +358,7 @@ class FragmentAddMember : Fragment() {
 
     private fun loadData() {
         try {
-            val sqlQuery = "SELECT * FROM MEMBER WHERE ID=''$ID"
+            val sqlQuery = "SELECT * FROM MEMBER WHERE ID='$ID'"
             db?.fireQuery(sqlQuery).use {
                 if (it != null) {
                     if (it.count > 0) {

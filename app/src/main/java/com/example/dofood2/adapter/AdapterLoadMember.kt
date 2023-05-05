@@ -16,8 +16,6 @@ class AdapterLoadMember(val arrayList:ArrayList<AllMember>): RecyclerView.Adapte
         this.onClick = onClick
     }
 
-
-
     class MyViewHolder(val binding:AllMemberListResBinding): RecyclerView.ViewHolder(binding.root){
 
     }
