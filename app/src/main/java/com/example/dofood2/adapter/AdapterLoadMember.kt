@@ -11,6 +11,13 @@ import com.example.dofood2.model.AllMember
 
 class AdapterLoadMember(val arrayList:ArrayList<AllMember>): RecyclerView.Adapter<AdapterLoadMember.MyViewHolder>() {
 
+    private var onClick:((String)->Unit)?=null
+    fun onClick(onClick:((String)->Unit)){
+        this.onClick = onClick
+    }
+
+
+
     class MyViewHolder(val binding:AllMemberListResBinding): RecyclerView.ViewHolder(binding.root){
 
     }
@@ -22,9 +29,6 @@ class AdapterLoadMember(val arrayList:ArrayList<AllMember>): RecyclerView.Adapte
             return MyViewHolder(binding)
     }
 
-    override fun getItemCount(): Int {
-        return arrayList.size
-    }
 
     @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(holder: AdapterLoadMember.MyViewHolder, position: Int) {
@@ -52,8 +56,16 @@ class AdapterLoadMember(val arrayList:ArrayList<AllMember>): RecyclerView.Adapte
                                 .into(binding.imgPic)
                             }
                         }
+
+                    binding.layoutMemberList.setOnClickListener {
+                        onClick?.invoke(this.id)
+                    }
                     }
                 }
 
             }
+
+        override fun getItemCount(): Int {
+            return arrayList.size
+        }
     }

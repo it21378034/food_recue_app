@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.dofood2.R
@@ -107,12 +108,28 @@ class FragmentAllMember : BaseFragment() {
 
                 binding.recyclerViewMember.layoutManager = LinearLayoutManager(activity)
                 binding.recyclerViewMember.adapter = adapter
+
+                adapter?.onClick {
+                    loadFragment(it)
+                }
+
+
+
             } else {
                 binding.recyclerViewMember.visibility = View.GONE
                 binding.txtAllMemberNDF.visibility = View.VISIBLE
             }
             closeDialog()
         })
+    }
+
+    private  fun loadFragment(id:String){
+        val fragment = FragmentAddMember()
+        val args = Bundle()
+        args.putString("ID",id)
+        fragment.arguments = args
+        val fragmentManager : FragmentManager?= fragmentManager
+        fragmentManager!!.beginTransaction().replace(R.id.frame_container,fragment,"FragmentAdd").commit()
     }
 
 
