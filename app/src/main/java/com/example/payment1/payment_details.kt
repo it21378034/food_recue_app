@@ -51,15 +51,10 @@ class payment_details : AppCompatActivity() {
 
 
             val useMap = hashMapOf(
-<<<<<<< Updated upstream
-                "id" to userId,
-                "first_name" to first_name_two,
-                "last_name" to last_name_two,
-=======
+
                 "id" to dataId,
                 "First_name" to first_name_two,
                 "Last_name" to last_name_two,
->>>>>>> Stashed changes
                 "mail" to mail_two,
                 "phone_number" to phone_number_two,
                 "address" to address_two
