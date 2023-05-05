@@ -42,8 +42,7 @@ class payment_details : AppCompatActivity() {
 
         next.setOnClickListener {
 
-            val userId = UUID.randomUUID().toString()
-
+            val dataId = UUID.randomUUID().toString()
             val first_name_two = first_name.text.toString().trim()
             val last_name_two = last_name.text.toString().trim()
             val mail_two = mail.text.toString().trim()
@@ -52,15 +51,21 @@ class payment_details : AppCompatActivity() {
 
 
             val useMap = hashMapOf(
+<<<<<<< Updated upstream
                 "id" to userId,
                 "first_name" to first_name_two,
                 "last_name" to last_name_two,
+=======
+                "id" to dataId,
+                "First_name" to first_name_two,
+                "Last_name" to last_name_two,
+>>>>>>> Stashed changes
                 "mail" to mail_two,
                 "phone_number" to phone_number_two,
                 "address" to address_two
             )
 
-            db.collection("payment Details").document(userId).set(useMap)
+            db.collection("payment Details").document(dataId).set(useMap)
                 .addOnSuccessListener {
                     Toast.makeText(this, "Successfully Added", Toast.LENGTH_SHORT).show()
                     first_name.text.clear()

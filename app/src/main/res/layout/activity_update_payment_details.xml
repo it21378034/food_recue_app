@@ -4,12 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".show_payment_details">
+    tools:context=".update_payment_details">
 
     <ScrollView
         android:layout_width="410dp"
         android:layout_height="731dp"
-        >
+        tools:ignore="MissingConstraints">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -27,7 +27,7 @@
                 android:id="@+id/textView2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Payment Successful"
+                android:text="Update Payment Details"
                 android:textAlignment="center"
                 android:textColor="#6C5DD2"
                 android:textSize="40sp"
@@ -60,8 +60,8 @@
                             android:textColor="#6C5002"
                             android:textSize="18sp" />
 
-                        <TextView
-                            android:id="@+id/fname"
+                        <EditText
+                            android:id="@+id/first_name"
                             android:layout_width="match_parent"
                             android:layout_height="50dp"
                             android:layout_marginTop="1dp"
@@ -98,8 +98,8 @@
                             android:textColor="#6C5002"
                             android:textSize="18sp" />
 
-                        <TextView
-                            android:id="@+id/lname"
+                        <EditText
+                            android:id="@+id/last_name"
                             android:layout_width="match_parent"
                             android:layout_height="50dp"
                             android:layout_marginTop="1dp"
@@ -131,8 +131,8 @@
                     android:textColor="#6C5002"
                     android:textSize="18sp" />
 
-                <TextView
-                    android:id="@+id/mails"
+                <EditText
+                    android:id="@+id/mail"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_marginTop="1dp"
@@ -162,8 +162,8 @@
                     android:textSize="18sp"
                     tools:ignore="DuplicateIds" />
 
-                <TextView
-                    android:id="@+id/pnumber"
+                <EditText
+                    android:id="@+id/phone_number"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_marginTop="2dp"
@@ -194,8 +194,8 @@
                     android:textSize="18sp"
                     tools:ignore="DuplicateIds" />
 
-                <TextView
-                    android:id="@+id/addres"
+                <EditText
+                    android:id="@+id/address"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_marginTop="1dp"
@@ -210,7 +210,7 @@
             </LinearLayout>
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/ok"
+                android:id="@+id/update"
                 style="@android:style/Widget.Button"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
@@ -218,7 +218,7 @@
                 android:layout_marginTop="20dp"
                 android:background="@drawable/button_background"
                 android:gravity="center"
-                android:text="OK"
+                android:text="Update"
                 android:textColor="#ffffff"
                 android:textSize="18sp"
                 android:textStyle="bold" />
