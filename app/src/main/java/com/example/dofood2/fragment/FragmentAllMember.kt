@@ -51,7 +51,7 @@ class FragmentAllMember : BaseFragment() {
         }
     }
 
-    fun OnResume() {
+    override fun onResume() {
         super.onResume()
         loadData("A")
     }
@@ -88,19 +88,8 @@ class FragmentAllMember : BaseFragment() {
                             mobile = Myfunction.getValue(it, "MOBILE"),
                             address = Myfunction.getValue(it, "ADDRESS"),
                             image = Myfunction.getValue(it, "IMAGE_PATH"),
-                            dateOfJoining = Myfunction.returnUserSQLDateFormat(
-                                Myfunction.getValue(
-                                    it,
-                                    "DATE_OF_JOINING"
-                                )
-                            ),
-                            expiryDate = Myfunction.returnUserSQLDateFormat(
-                                Myfunction.getValue(
-                                    it,
-                                    "EXPIRE_ON"
-                                )
-                            )
-                        )
+                            dateOfJoining = Myfunction.returnUserDateFormat(Myfunction.getValue(it, "DATE_OF_JOINING")),
+                            expiryDate = Myfunction.returnUserDateFormat(Myfunction.getValue(it, "EXPIRE_ON")))
 
                         arrayList.add(list)
                     } while (it.moveToNext())
