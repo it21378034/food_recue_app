@@ -24,6 +24,7 @@
     <string name="_3_year">3 Years Fee</string>
     <string name="Submit">Submit</string>
     <string name="forget_password">Forget Password</string>
+    <string name="no_data_found">No data found</string>
 
     <string-array name="membership">
         <item>Select</item>

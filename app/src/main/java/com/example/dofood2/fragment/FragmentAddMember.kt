@@ -266,26 +266,22 @@ class FragmentAddMember : Fragment() {
         return true
     }
 
-    private fun saveData(){
+    private fun saveData() =
         try {
             val sqlQuery = "INSERT OR REPLACE INTO MEMBER(ID,FIRST_NAME,LAST_NAME,GENDER,AGE," +
-                    "WEIGHT,MOBILE,ADDRESS,DATE_OF_JOINING,MEMBERSHIP,EXPIRE_ON,DISCOUNT,TOTAL,IMAGE_PATH,STATUS)VALUES"+
+                    "WEIGHT,MOBILE,ADDRESS,DATE_OF_JOINING,MEMBERSHIP,EXPIRE_ON,DISCOUNT,TOTAL,IMAGE_PATH,STATUS)VALUES" +
                     "('"+getIncrementId()+"',"+DatabaseUtils.sqlEscapeString(binding.editFirstName.text.toString().trim())+"," +
                     ""+DatabaseUtils.sqlEscapeString(binding.editLastName.text.toString().trim())+",'"+gender+"'," +
-                    "'"+binding.editAge.text.toString().trim()+"','"+binding.editweight.text.toString().trim()+"',"+
-                    ""+binding.editMobile.text.toString().trim()+","+DatabaseUtils.sqlEscapeString(binding.editAddress.text.toString().trim())+"," +
-                    "'"+Myfunction.returnUserSQLDateFormat(binding.edtJoining.text.toString().trim())+"','"+binding.spMembership.selectedItem.toString().trim()+"'," +
-                    "'"+Myfunction.returnUserSQLDateFormat(binding.editExpire.text.toString().trim())+"','"+binding.edtDiscount.text.toString().trim() +"'," +
-                    "'"+binding.edtAmount.text.toString().trim()+"','"+ actualImagePath+"','A')"
-
+                    "'"+ binding.editAge.text.toString().trim()+"','"+ binding.editweight.text.toString().trim()+"'," +
+                    ""+ binding.editMobile.text.toString().trim()+"," +DatabaseUtils.sqlEscapeString(binding.editAddress.text.toString().trim())+"," +
+                    "'"+Myfunction.returnSQLDateFormat(binding.edtJoining.text.toString().trim())+"','"+ binding.spMembership.selectedItem.toString().trim()+"'," +
+                    "'"+Myfunction.returnSQLDateFormat(binding.editExpire.text.toString().trim())+"','"+ binding.edtDiscount.text.toString().trim()+"'," +
+                    "'"+ binding.edtAmount.text.toString().trim()+"','"+actualImagePath+"','A')"
             db?.executeQuery(sqlQuery)
             showToast("Data saved successfully")
 
-            clearData()
-
-        }catch (e:Exception){
-            e.printStackTrace()
-        }
+    }catch (e:Exception){
+        e.printStackTrace()
     }
 
     private  fun getIncrementId():String{

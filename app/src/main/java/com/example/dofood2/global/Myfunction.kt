@@ -25,13 +25,13 @@ class Myfunction {
         }
 
         @SuppressLint("SimpleDateFormat")
-        fun returnUserSQLDateFormat(date:String): String{
+        fun returnSQLDateFormat(date:String): String{
             try {
                 if(date.trim().isNotEmpty()){
                     val dateFormat1 = SimpleDateFormat("yyyy-MM-dd")
                     val firstDate = dateFormat1.parse(date)
                     val dateFormat2 = SimpleDateFormat("dd/MM/yyyy")
-                    return dateFormat2.format(firstDate as Date)
+                    return dateFormat2.format(/* date = */ firstDate)
                 }
             }catch (e:Exception){
                 e.printStackTrace()
