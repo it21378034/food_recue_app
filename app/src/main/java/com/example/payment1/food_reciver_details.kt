@@ -26,9 +26,9 @@ class food_reciver_details : AppCompatActivity() {
         setContentView(R.layout.activity_food_reciver_details)
 
 
-        edfname = findViewById(R.id.etufname)
-        edfaddress = findViewById(R.id.etufaddress)
-        edfnic = findViewById(R.id.etufnic)
+        edfname = findViewById(R.id.etuMname)
+        edfaddress = findViewById(R.id.etuMaddress)
+        edfnic = findViewById(R.id.etuMnic)
         edfmnum = findViewById(R.id.edufmnum)
         btnadd = findViewById(R.id.addDetails_btn)
 

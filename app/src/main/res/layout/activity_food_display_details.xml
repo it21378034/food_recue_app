@@ -22,7 +22,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/etufname"
+        android:id="@+id/etuMname"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
@@ -34,7 +34,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
     <EditText
-        android:id="@+id/etufaddress"
+        android:id="@+id/etuMaddress"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
@@ -43,10 +43,10 @@
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etufname" />
+        app:layout_constraintTop_toBottomOf="@+id/etuMname" />
 
     <EditText
-        android:id="@+id/etufnic"
+        android:id="@+id/etuMnic"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
@@ -55,10 +55,10 @@
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etufaddress" />
+        app:layout_constraintTop_toBottomOf="@+id/etuMaddress" />
 
     <EditText
-        android:id="@+id/etufPhone"
+        android:id="@+id/etuMPhone"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
@@ -67,7 +67,7 @@
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etufnic" />
+        app:layout_constraintTop_toBottomOf="@+id/etuMnic" />
 
     <Button
         android:id="@+id/btnSave"
@@ -77,7 +77,7 @@
         android:text="Save Data"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etufPhone" />
+        app:layout_constraintTop_toBottomOf="@+id/etuMPhone" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

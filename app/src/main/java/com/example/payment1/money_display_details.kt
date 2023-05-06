@@ -22,10 +22,10 @@ class money_display_details : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_money_display_details)
 
-        DMName = findViewById(R.id.etufname)
-        DMAddress = findViewById(R.id.etufaddress)
-        DMNic = findViewById(R.id.etufnic)
-        DMAccNum = findViewById(R.id.etufPhone)
+        DMName = findViewById(R.id.etuMname)
+        DMAddress = findViewById(R.id.etuMaddress)
+        DMNic = findViewById(R.id.etuMnic)
+        DMAccNum = findViewById(R.id.etuMPhone)
 
         val adminId = UUID.randomUUID().toString()
         val ref = db.collection("MoneyReciver").document("36e96e50-f5e6-404b-a4dd-faeaa96222a7")

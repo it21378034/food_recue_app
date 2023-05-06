@@ -23,10 +23,10 @@ class food_update_data : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_food_update_data)
 
-        uName = findViewById(R.id.etufname)
-        uAddress = findViewById(R.id.etufaddress)
-        uNic = findViewById(R.id.etufnic)
-        uMobNum = findViewById(R.id.etufPhone)
+        uName = findViewById(R.id.etuMname)
+        uAddress = findViewById(R.id.etuMaddress)
+        uNic = findViewById(R.id.etuMnic)
+        uMobNum = findViewById(R.id.etuMPhone)
         update = findViewById(R.id.btnupdate)
 
         setData()
@@ -46,7 +46,7 @@ class food_update_data : AppCompatActivity() {
             )
 
             val adminId = UUID.randomUUID().toString()
-            db.collection("nethmini").document("2e62c2b8-64af-41d7-9573-46add0d364ca").update(updateMap)
+            db.collection("nethmini").document("98c5b089-4b99-4b57-9ca8-832bd74d4cdd").update(updateMap)
 
             Toast.makeText(this, "Successfully Edited!", Toast.LENGTH_SHORT).show()
 
@@ -56,7 +56,7 @@ class food_update_data : AppCompatActivity() {
 
     private fun setData() {
         val adminId = UUID.randomUUID().toString()
-        val ref = db.collection("nethmini").document("2e62c2b8-64af-41d7-9573-46add0d364ca")
+        val ref = db.collection("nethmini").document("98c5b089-4b99-4b57-9ca8-832bd74d4cdd")
         ref.get().addOnSuccessListener {
             if(it != null){
                 val etufname = it.data?.get("Name")?.toString()
@@ -64,10 +64,10 @@ class food_update_data : AppCompatActivity() {
                 val etufnic = it.data?.get("Nic")?.toString()
                 val etufPhone = it.data?.get("Num")?.toString()
 
-                uName.setText(etufname)
-                uAddress.setText(etufaddress)
-                uNic.setText(etufnic)
-                uMobNum.setText(etufPhone)
+                uName.text = etufname
+                uAddress.text=(etufaddress)
+                uNic.text = etufnic
+                uMobNum.text = etufPhone
             }
         }
             .addOnFailureListener {

@@ -27,11 +27,11 @@ class food_delete_details : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_food_delete_details)
 
-        dName = findViewById(R.id.etufname)
-        dAddress = findViewById(R.id.etufaddress)
-        dNic = findViewById(R.id.etufnic)
-        dMobNum = findViewById(R.id.etufPhone)
-        delete = findViewById(R.id.btnupdate)
+        dName = findViewById(R.id.etuMname)
+        dAddress = findViewById(R.id.etuMaddress)
+        dNic = findViewById(R.id.etuMnic)
+        dMobNum = findViewById(R.id.etuMPhone)
+        delete = findViewById(R.id.btndelete)
 
 
         setData()
@@ -42,7 +42,8 @@ class food_delete_details : AppCompatActivity() {
                 "Name" to FieldValue.delete(),
                 "Address" to FieldValue.delete(),
                 "Nic" to FieldValue.delete(),
-                "Num" to FieldValue.delete()
+                "Num" to FieldValue.delete(),
+
             )
 
             val adminId = UUID.randomUUID().toString()
@@ -64,15 +65,15 @@ class food_delete_details : AppCompatActivity() {
         val ref = db.collection("nethmini").document("2e62c2b8-64af-41d7-9573-46add0d364ca")
         ref.get().addOnSuccessListener {
             if(it != null){
-                val name = it.data?.get("Name")?.toString()
-                val address = it.data?.get("Address")?.toString()
-                val nic = it.data?.get("Nic")?.toString()
-                val num = it.data?.get("Num")?.toString()
+                val etuMname = it.data?.get("Name")?.toString()
+                val etuMaddress = it.data?.get("Address")?.toString()
+                val etuMnic = it.data?.get("Nic")?.toString()
+                val etuMPhone = it.data?.get("Num")?.toString()
 
-                dName.setText(name)
-                dAddress.setText(address)
-                dNic.setText(nic)
-                dMobNum.setText(num)
+                dName.text = etuMname
+                dAddress.text=(etuMaddress)
+                dNic.text = etuMnic
+                dMobNum.text = etuMPhone
             }
         }
             .addOnFailureListener {

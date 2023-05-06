@@ -44,7 +44,7 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <EditText
-        android:id="@+id/etufname"
+        android:id="@+id/etuMname"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
@@ -69,7 +69,7 @@
         app:layout_constraintTop_toBottomOf="@+id/etname" />
 
     <EditText
-        android:id="@+id/etufaddress"
+        android:id="@+id/etuMaddress"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
@@ -77,8 +77,8 @@
         android:hint="Enter Address"
         android:inputType="textPersonName"
         android:minHeight="48dp"
-        app:layout_constraintEnd_toEndOf="@+id/etufname"
-        app:layout_constraintTop_toBottomOf="@+id/etufname" />
+        app:layout_constraintEnd_toEndOf="@+id/etuMname"
+        app:layout_constraintTop_toBottomOf="@+id/etuMname" />
 
     <TextView
         android:id="@+id/etnic"
@@ -93,7 +93,7 @@
         app:layout_constraintTop_toBottomOf="@+id/etaddress" />
 
     <EditText
-        android:id="@+id/etufnic"
+        android:id="@+id/etuMnic"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
@@ -101,8 +101,8 @@
         android:hint="123456789V"
         android:inputType="textPersonName"
         android:minHeight="48dp"
-        app:layout_constraintEnd_toEndOf="@+id/etufaddress"
-        app:layout_constraintTop_toBottomOf="@+id/etufaddress" />
+        app:layout_constraintEnd_toEndOf="@+id/etuMaddress"
+        app:layout_constraintTop_toBottomOf="@+id/etuMaddress" />
 
     <TextView
         android:id="@+id/etnum"
@@ -125,8 +125,8 @@
         android:hint="__ __ __   __ __ __ __ __ __ __"
         android:inputType="textPersonName"
         android:minHeight="48dp"
-        app:layout_constraintEnd_toEndOf="@+id/etufnic"
-        app:layout_constraintTop_toBottomOf="@+id/etufnic" />
+        app:layout_constraintEnd_toEndOf="@+id/etuMnic"
+        app:layout_constraintTop_toBottomOf="@+id/etuMnic" />
 
     <Button
         android:id="@+id/addDetails_btn"

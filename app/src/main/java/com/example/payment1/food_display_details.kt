@@ -23,10 +23,10 @@ private var db = Firebase.firestore
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_food_display_details)
 
-        DName = findViewById(R.id.etufname)
-        DAddress = findViewById(R.id.etufaddress)
-        DNic = findViewById(R.id.etufnic)
-        DMobNum = findViewById(R.id.etufPhone)
+        DName = findViewById(R.id.etuMname)
+        DAddress = findViewById(R.id.etuMaddress)
+        DNic = findViewById(R.id.etuMnic)
+        DMobNum = findViewById(R.id.etuMPhone)
 
         val adminId = UUID.randomUUID().toString()
                 val ref = db.collection("nethmini").document("98c5b089-4b99-4b57-9ca8-832bd74d4cdd")
