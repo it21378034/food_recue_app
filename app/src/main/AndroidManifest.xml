@@ -43,7 +43,7 @@
 
 
         <activity
-            android:name=".Deliveritem"
+            android:name=".food_reciver_details"
             android:exported="false" />
         <activity
             android:name=".update_delete_payment_details"
@@ -65,7 +65,7 @@
             android:name=".food_delete_details"
             android:exported="false"/>
         <activity
-            android:name=".food_reciver_details"
+            android:name=".Deliveritem"
 
             android:exported="true">
             <intent-filter>
