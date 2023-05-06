@@ -6,128 +6,254 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <EditText
-        android:id="@+id/mobile_number"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="MOBILE NUMBER:"
-        android:textColor="#03A9F4"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.476"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bank_name"
-        tools:ignore="MissingConstraints" />
-
-    <androidx.constraintlayout.utils.widget.ImageFilterView
-        android:id="@+id/imageFilterView"
-        android:layout_width="164dp"
-        android:layout_height="126dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5"
-        app:srcCompat="@drawable/detailed_realistic_vector_credit_card_260nw_573142507" />
-
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:text="Add Payment Details"
-        android:textColor="#03A9F4"
-        android:textIsSelectable="false"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.661"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/pay"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="pay"
-
-        app:layout_constraintBottom_toTopOf="@+id/cancel"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <EditText
-        android:id="@+id/card_number"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="CARD NUMBER:"
-        android:textColor="#03A9F4"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.428"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageFilterView" />
-
-    <EditText
-        android:id="@+id/bank_name"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="BANK NAME:"
-        android:textColor="#03A9F4"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.476"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/card_number"
-        tools:ignore="MissingConstraints,UnknownId" />
-
-    <EditText
-        android:id="@+id/month"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="MM/YY"
-        android:textColor="#03A9F4"
-        android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mobile_number"
-        tools:ignore="MissingConstraints" />
-
-    <EditText
-        android:id="@+id/cvv"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="CVC"
-        android:textColor="#03A9F4"
-        android:textSize="16sp"
-        app:layout_constraintTop_toBottomOf="@+id/mobile_number"
+    <ScrollView
+        android:layout_width="410dp"
+        android:layout_height="731dp"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="26dp" />
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
 
-    <Button
-        android:id="@+id/cancel"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="24dp"
-        android:backgroundTint="#E43D3D"
-        android:drawableTint="#F4EBEB"
-        android:text="cancel"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="match_parent"
+                android:layout_height="156dp"
+                android:scaleType="centerCrop"
+                app:srcCompat="@drawable/vector" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Card Details"
+                android:textAlignment="center"
+                android:textColor="#6C5DD2"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="32dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/card"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Card Number"
+                    android:textColor="#6C5002"
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/card_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="1dp"
+                    android:background="@drawable/backgrount_edit"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:hint="Enter Your Card Number"
+                    android:inputType="textPersonName"
+                    android:textColor="#707070"
+                    android:textColorHint="#707070" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="32dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/bankname"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Bank Name"
+                    android:textColor="#6C5002"
+                    android:textSize="18sp"
+                    tools:ignore="DuplicateIds" />
+
+                <EditText
+                    android:id="@+id/bank_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="2dp"
+                    android:background="@drawable/backgrount_edit"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:hint="Enter yor bank "
+                    android:inputType="textPersonName"
+                    android:textColor="#707070"
+                    android:textColorHint="#707070"
+                    tools:ignore="DuplicateIds" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="32dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/mobilenumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Mobile Number"
+                    android:textColor="#6C5002"
+                    android:textSize="18sp"
+                    tools:ignore="DuplicateIds" />
+
+                <EditText
+                    android:id="@+id/mobile_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="1dp"
+                    android:background="@drawable/backgrount_edit"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:hint="Enter Your Mobile Number"
+                    android:inputType="textPersonName"
+                    android:textColor="#707070"
+                    android:textColorHint="#707070"
+                    tools:ignore="DuplicateIds" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="32dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="32dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/months"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Month"
+                            android:textColor="#6C5002"
+                            android:textSize="18sp" />
+
+                        <EditText
+                            android:id="@+id/month"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:layout_marginTop="1dp"
+                            android:background="@drawable/backgrount_edit"
+                            android:ems="10"
+                            android:gravity="center"
+                            android:hint="Enter Your Name"
+                            android:inputType="textPersonName"
+                            android:textColor="#707070"
+                            android:textColorHint="#707070"
+                            android:textSize="16sp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="32dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="32dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/cvvs"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="CVV"
+                            android:textColor="#6C5002"
+                            android:textSize="18sp" />
+
+                        <EditText
+                            android:id="@+id/cvv"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:layout_marginTop="1dp"
+                            android:background="@drawable/backgrount_edit"
+                            android:ems="10"
+                            android:gravity="center"
+                            android:hint="Enter Your Name"
+                            android:inputType="textPersonName"
+                            android:textColor="#707070"
+                            android:textColorHint="#707070"
+                            android:textSize="16sp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/pay"
+                    style="@android:style/Widget.Button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/button_background"
+                    android:gravity="center"
+                    android:text="pay"
+                    android:textColor="#ffffff"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/cancel"
+                    style="@android:style/Widget.Button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/cansel_button"
+                    android:gravity="center"
+                    android:text="cancel"
+                    android:textColor="#ffffff"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </LinearLayout>
+
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

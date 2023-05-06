@@ -11,20 +11,62 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Payment1"
         tools:targetApi="31">
+
         <activity
             android:name=".Data"
             android:exported="false" />
+
         <activity
-            android:name=".Detailsadd"
+            android:name=".successful_details"
+            android:exported="false" />
+        <activity
+            android:name=".payment_details"
+            android:exported="false" />
+        <activity
+            android:name=".show_payment_details"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".food_display_details"
+            android:exported="false" />
+        <activity
+            android:name=".money_reciever_details"
+            android:exported="false" />
+        <activity
+            android:name=".money_display_details"
             android:exported="false" />
         <activity
             android:name=".Deliveritem"
             android:exported="false" />
+
+
+        <activity
+            android:name=".Detailsadd"
+            android:exported="false" />
+        <activity
+            android:name=".update_delete_payment_details"
+            android:exported="false" />
+        <activity
+            android:name=".food_update_data"
+            android:exported="false" />
+
         <activity
             android:name=".food_reciver_details"
             android:exported="false" />
         <activity
+
             android:name=".Data2"
+
+           
+            android:exported="false" />
+        <activity
+            android:name=".food_delete_details"
+            android:exported="false"/>
+        <activity
+            android:name=".button_display_page"
+
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
