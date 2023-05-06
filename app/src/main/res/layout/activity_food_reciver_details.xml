@@ -34,8 +34,8 @@
         android:id="@+id/etname"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="48dp"
         android:text=" Name  : "
         android:textColor="@color/app_theme"
         android:textSize="20sp"
@@ -44,102 +44,113 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <EditText
-        android:id="@+id/edfname"
+        android:id="@+id/etufname"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="68dp"
         android:ems="10"
         android:hint="Enter Reciver Name"
         android:inputType="textPersonName"
         android:minHeight="48dp"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
-        app:layout_constraintStart_toStartOf="@+id/etname"
-        app:layout_constraintTop_toBottomOf="@+id/etname" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <TextView
         android:id="@+id/etaddress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="44dp"
         android:text=" Address :"
         android:textColor="@color/app_theme"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/edfname"
-        app:layout_constraintTop_toBottomOf="@+id/edfname" />
+        app:layout_constraintStart_toStartOf="@+id/etname"
+        app:layout_constraintTop_toBottomOf="@+id/etname" />
 
     <EditText
-        android:id="@+id/edfaddress"
+        android:id="@+id/etufaddress"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="28dp"
         android:ems="10"
         android:hint="Enter Address"
         android:inputType="textPersonName"
         android:minHeight="48dp"
-        app:layout_constraintStart_toStartOf="@+id/etaddress"
-        app:layout_constraintTop_toBottomOf="@+id/etaddress" />
+        app:layout_constraintEnd_toEndOf="@+id/etufname"
+        app:layout_constraintTop_toBottomOf="@+id/etufname" />
 
     <TextView
         android:id="@+id/etnic"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="44dp"
         android:text="NIC :"
         android:textColor="@color/app_theme"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/edfaddress"
-        app:layout_constraintTop_toBottomOf="@+id/edfaddress" />
+        app:layout_constraintStart_toStartOf="@+id/etaddress"
+        app:layout_constraintTop_toBottomOf="@+id/etaddress" />
 
     <EditText
-        android:id="@+id/edfnic"
+        android:id="@+id/etufnic"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="28dp"
         android:ems="10"
         android:hint="123456789V"
         android:inputType="textPersonName"
         android:minHeight="48dp"
-        app:layout_constraintStart_toStartOf="@+id/etnic"
-        app:layout_constraintTop_toBottomOf="@+id/etnic" />
+        app:layout_constraintEnd_toEndOf="@+id/etufaddress"
+        app:layout_constraintTop_toBottomOf="@+id/etufaddress" />
 
     <TextView
         android:id="@+id/etnum"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
+        android:layout_width="106dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="44dp"
         android:text="Mobile Number :"
         android:textColor="@color/app_theme"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/edfnic"
-        app:layout_constraintTop_toBottomOf="@+id/edfnic" />
+        app:layout_constraintStart_toStartOf="@+id/etnic"
+        app:layout_constraintTop_toBottomOf="@+id/etnic" />
 
     <EditText
-        android:id="@+id/edfmnum"
+        android:id="@+id/edufmnum"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="28dp"
         android:ems="10"
         android:hint="__ __ __   __ __ __ __ __ __ __"
         android:inputType="textPersonName"
         android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="@+id/etufnic"
+        app:layout_constraintTop_toBottomOf="@+id/etufnic" />
+
+    <Button
+        android:id="@+id/addDetails_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="56dp"
+        android:text="Add Details"
+        android:textStyle="bold"
+        app:cornerRadius="10dp"
         app:layout_constraintStart_toStartOf="@+id/etnum"
         app:layout_constraintTop_toBottomOf="@+id/etnum" />
 
     <Button
-        android:id="@+id/btnadd"
+        android:id="@+id/featchdta"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:text="Add Details"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="16dp"
+        android:text="Featch"
         android:textStyle="bold"
         app:cornerRadius="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.379"
-        app:layout_constraintStart_toEndOf="@+id/edfmnum"
-        app:layout_constraintTop_toBottomOf="@+id/etnum" />
+        app:layout_constraintEnd_toEndOf="@+id/edufmnum"
+        app:layout_constraintTop_toBottomOf="@+id/edufmnum" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
