@@ -38,12 +38,12 @@
             android:name=".money_display_details"
             android:exported="false" />
         <activity
-            android:name=".Deliveritem"
+            android:name=".Detailsadd"
             android:exported="false" />
 
 
         <activity
-            android:name=".Detailsadd"
+            android:name=".Deliveritem"
             android:exported="false" />
         <activity
             android:name=".update_delete_payment_details"
@@ -53,19 +53,19 @@
             android:exported="false" />
 
         <activity
-            android:name=".food_reciver_details"
+            android:name=".money_update_details"
             android:exported="false" />
         <activity
 
             android:name=".Data2"
 
-           
+
             android:exported="false" />
         <activity
             android:name=".food_delete_details"
             android:exported="false"/>
         <activity
-            android:name=".button_display_page"
+            android:name=".food_reciver_details"
 
             android:exported="true">
             <intent-filter>
