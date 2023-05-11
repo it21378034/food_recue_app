@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import com.google.firebase.firestore.FirebaseFirestore
 import java.net.Inet4Address
@@ -22,6 +23,8 @@ class payment_details : AppCompatActivity() {
     private lateinit var address: EditText
     private lateinit var next: Button
     private lateinit var builer: AlertDialog.Builder
+
+    private lateinit var tAnount:TextView
 
     private var db = FirebaseFirestore.getInstance();
 
@@ -81,11 +84,12 @@ class payment_details : AppCompatActivity() {
 
                 .setPositiveButton("yes"){dialogInterface,it ->
                     // Navigate to MainActivity
-                    val intent = Intent(this@payment_details, MainActivity::class.java)
+                    val intent = Intent(this, MainActivity::class.java)
+
                     startActivity(intent)
                 }
                 .setNegativeButton("no"){dialogInterface,it ->
-                    Toast.makeText(this@payment_details,"yes Clicked",Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@payment_details,"No Clicked",Toast.LENGTH_SHORT).show()
                 }
                 .show()
 

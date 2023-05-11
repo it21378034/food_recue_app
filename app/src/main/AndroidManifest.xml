@@ -17,16 +17,16 @@
             android:exported="false" />
 
         <activity
-            android:name=".successful_details"
-            android:exported="false" />
-        <activity
-            android:name=".payment_details"
-            android:exported="false" />
-        <activity
-            android:name=".show_payment_details"
+            android:name=".Button_Display_page"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".successful_details"
+            android:exported="false" />
+        <activity
+            android:name=".Deliveritem"
             android:exported="false" />
         <activity
             android:name=".food_display_details"
@@ -46,9 +46,19 @@
             android:name=".food_reciver_details"
             android:exported="false" />
         <activity
+            android:name=".payment_details"
+            android:exported="false" />
+        <activity
             android:name=".update_delete_payment_details"
             android:exported="false" />
         <activity
+            android:name=".once_payment_page"
+            android:exported="false" />
+        <activity
+            android:name=".food_reciver_details"
+            android:exported="false" />
+        <activity
+            android:name=".Home"
             android:name=".food_update_data"
             android:exported="false" />
 
@@ -73,6 +83,9 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value=""/>
         </activity>
     </application>
 
