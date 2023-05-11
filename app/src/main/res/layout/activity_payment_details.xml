@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginEnd="32dp"
     tools:context=".payment_details">
 
     <ScrollView
@@ -22,7 +21,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="156dp"
                 android:scaleType="centerCrop"
-                app:srcCompat="@drawable/vector" />
+                app:srcCompat="@drawable/donating" />
 
             <TextView
                 android:id="@+id/textView2"
@@ -125,7 +124,7 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/textView3"
+                    android:id="@+id/email"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Email"
@@ -155,7 +154,7 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/textView3"
+                    android:id="@+id/number"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Phone Number"
@@ -187,7 +186,7 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/textView3"
+                    android:id="@+id/ad"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Address"
@@ -210,19 +209,22 @@
                     tools:ignore="DuplicateIds" />
             </LinearLayout>
 
+
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/next"
                 style="@android:style/Widget.Button"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="10dp"
                 android:background="@drawable/button_background"
                 android:gravity="center"
                 android:text="Next"
                 android:textColor="#ffffff"
                 android:textSize="18sp"
                 android:textStyle="bold" />
+
+
         </LinearLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

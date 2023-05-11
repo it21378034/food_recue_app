@@ -21,7 +21,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="156dp"
                 android:scaleType="centerCrop"
-                app:srcCompat="@drawable/vector" />
+                app:srcCompat="@drawable/donating" />
 
             <TextView
                 android:id="@+id/textView2"
@@ -124,7 +124,7 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/textView3"
+                    android:id="@+id/email"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Email"
@@ -154,7 +154,7 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/textView3"
+                    android:id="@+id/pn"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Phone Number"
@@ -186,7 +186,7 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/textView3"
+                    android:id="@+id/add"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Address"
