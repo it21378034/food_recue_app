@@ -60,8 +60,8 @@
             android:textSize="18sp"
             android:layout_marginTop="10dp"/>
 
-        <EditText
-            android:id="@+id/amount"
+        <TextView
+            android:id="@+id/amountTxt"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginTop="1dp"

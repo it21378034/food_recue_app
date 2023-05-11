@@ -73,8 +73,7 @@ class once_payment_page : AppCompatActivity() {
         }
 
         buttonok.setOnClickListener {
-            val Intent = Intent(this,payment_details::class.java)
-            startActivity(Intent)
+
 
             buttonok.visibility = View.VISIBLE
 
@@ -94,7 +93,13 @@ class once_payment_page : AppCompatActivity() {
                     Toast.makeText(this,"Failed",Toast.LENGTH_SHORT).show()
                 }
 
+            val Intent = Intent(this,payment_details::class.java)
+            intent.putExtra("amount", donate)
+            startActivity(Intent)
+
         }
+
+
 
 
     }

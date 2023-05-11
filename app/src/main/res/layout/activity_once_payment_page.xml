@@ -15,29 +15,16 @@
         android:scaleType="centerCrop"
         app:srcCompat="@drawable/donating" />
 
-    <LinearLayout
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_marginTop="30dp"
         android:layout_width="match_parent"
-        android:gravity="center"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        >
+        android:textStyle="bold"
+        android:gravity="center"
+        android:textSize="20dp"
+        android:text="Select your Donation Amount OR Type Your Donation" />
 
-        <Button
-            android:id="@+id/once"
-            android:text="Once"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAllCaps="false"/>
-        <Button
-            android:id="@+id/month"
-            android:text="Monts"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="15dp"
-            android:textAllCaps="false"/>
-
-
-    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -93,6 +80,8 @@
             android:layout_marginStart="20dp"
             android:textAllCaps="false"/>
     </LinearLayout>
+
+
 
     <EditText
         android:id="@+id/donate"

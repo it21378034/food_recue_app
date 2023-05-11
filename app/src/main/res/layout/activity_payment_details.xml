@@ -209,19 +209,22 @@
                     tools:ignore="DuplicateIds" />
             </LinearLayout>
 
+
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/next"
                 style="@android:style/Widget.Button"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop="40dp"
+                android:layout_marginTop="10dp"
                 android:background="@drawable/button_background"
                 android:gravity="center"
                 android:text="Next"
                 android:textColor="#ffffff"
                 android:textSize="18sp"
                 android:textStyle="bold" />
+
+
         </LinearLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

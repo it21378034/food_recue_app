@@ -5,6 +5,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import com.google.firebase.firestore.ktx.firestore
@@ -17,6 +18,7 @@ class successful_details : AppCompatActivity() {
     private lateinit var bankname: TextView
     private lateinit var mobilenumber: TextView
     private lateinit var okbtn: Button
+    private lateinit var total_amount:TextView
 
     private var db = Firebase.firestore
 
@@ -29,6 +31,9 @@ class successful_details : AppCompatActivity() {
         bankname = findViewById(R.id.bname)
         mobilenumber = findViewById(R.id.mobilenumber)
         okbtn = findViewById(R.id.ok)
+        total_amount = findViewById(R.id.amountTxt)
+
+        total_amount.text = intent.getStringExtra("amount")
 
 
         val userId = UUID.randomUUID().toString()
@@ -49,7 +54,7 @@ class successful_details : AppCompatActivity() {
             }
 
         okbtn.setOnClickListener {
-            val Intent = Intent(this,Button_Display_page::class.java)
+            val Intent = Intent(this,Button_Display_page ::class.java)
             startActivity(Intent)
         }
 
