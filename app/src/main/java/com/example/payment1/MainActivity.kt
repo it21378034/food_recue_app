@@ -1,5 +1,6 @@
 package com.example.payment1
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -34,6 +35,8 @@ class MainActivity : AppCompatActivity() {
         pay = findViewById(R.id.pay)
 
         pay.setOnClickListener {
+            val Intent = Intent(this,successful_details::class.java)
+            startActivity(Intent)
             pay.visibility = View.VISIBLE
 
             val userId = UUID.randomUUID().toString()
@@ -65,6 +68,8 @@ class MainActivity : AppCompatActivity() {
                     cvv.text.clear()
                 }
                 .addOnFailureListener {
+                    val Intent = Intent(this,MainActivity::class.java)
+                    startActivity(Intent)
                     Toast.makeText(this,"Failed",Toast.LENGTH_SHORT).show()
                 }
         }

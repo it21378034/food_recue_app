@@ -227,13 +227,13 @@
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/pay"
                     style="@android:style/Widget.Button"
-                    android:layout_width="match_parent"
+                    android:layout_width="320dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginTop="10dp"
                     android:background="@drawable/button_background"
                     android:gravity="center"
-                    android:text="next"
+                    android:text="Pay"
                     android:textColor="#ffffff"
                     android:textSize="18sp"
                     android:textStyle="bold" />
@@ -241,7 +241,7 @@
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/cancel"
                     style="@android:style/Widget.Button"
-                    android:layout_width="match_parent"
+                    android:layout_width="310dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginTop="10dp"

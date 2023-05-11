@@ -1,6 +1,7 @@
 package com.example.payment1
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
@@ -72,6 +73,9 @@ class once_payment_page : AppCompatActivity() {
         }
 
         buttonok.setOnClickListener {
+            val Intent = Intent(this,payment_details::class.java)
+            startActivity(Intent)
+
             buttonok.visibility = View.VISIBLE
 
             val userId = UUID.randomUUID().toString()

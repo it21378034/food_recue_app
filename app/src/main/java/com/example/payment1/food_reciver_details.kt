@@ -1,4 +1,5 @@
 package com.example.payment1
+
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -10,7 +11,6 @@ import com.google.firebase.firestore.FirebaseFirestore
 import java.util.UUID
 
 class food_reciver_details : AppCompatActivity() {
-
     private lateinit var edfname: EditText
     private lateinit var edfaddress: EditText
     private lateinit var edfnic: EditText
@@ -21,20 +21,22 @@ class food_reciver_details : AppCompatActivity() {
     private var db = FirebaseFirestore.getInstance()
 
 
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_food_reciver_details)
 
 
-        edfname = findViewById(R.id.etuMname)
-        edfaddress = findViewById(R.id.etuMaddress)
-        edfnic = findViewById(R.id.etuMnic)
-        edfmnum = findViewById(R.id.edufmnum)
-        btnadd = findViewById(R.id.addDetails_btn)
+        edfname = findViewById(R.id.edfname)
+        edfaddress = findViewById(R.id.edfaddress)
+        edfnic = findViewById(R.id.edfnic)
+        edfmnum = findViewById(R.id.edfmnum)
+        btnadd = findViewById(R.id.btnadd)
 
 
         btnadd.setOnClickListener {
-            btnadd.visibility = View.VISIBLE
+            progressBar.visibility = View.VISIBLE
 
             val adminId = UUID.randomUUID().toString()
 
