@@ -49,7 +49,7 @@ class Detailsadd : AppCompatActivity() {
             )
 
 
-            db.collection("kavidu").document(userId).set(userMap)
+            db.collection("detailsadd").document(userId).set(userMap)
                 .addOnSuccessListener{
                     Toast.makeText(this,"Successfully Added!",Toast.LENGTH_SHORT).show()
                     etName.text.clear()
